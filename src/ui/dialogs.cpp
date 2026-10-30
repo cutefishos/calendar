@@ -46,6 +46,9 @@ static void release(std::unique_ptr<Window>& window)
     Application::instance()->loop().post([doomed] {});
 }
 
+// The close control, centred in the 32-pixel corner slot.
+static constexpr double kCloseControl = 26;
+
 // The dialog's view: its column, and the close button in the corner over it.
 class SmallDialog::Root : public View
 {
@@ -53,10 +56,11 @@ public:
     explicit Root(SmallDialog* dialog)
         : m_dialog(dialog)
         , m_column(addChild<ColumnLayout>())
-        , m_close(addChild<HeaderButton>("close", 32))
+        , m_close(addChild<HeaderButton>("close", kCloseControl))
     {
         m_column->setPadding({16, 16, 16, 12});
         m_column->setSpacing(16);
+        m_close->setWindowControl(true);
         m_close->onClicked = [this] { m_dialog->close(); };
     }
 
@@ -69,7 +73,8 @@ protected:
     void layout() override
     {
         m_column->setGeometry({0, 0, geometry().width, m_column->heightForWidth(geometry().width)});
-        m_close->setGeometry({geometry().width - 8 - 32, 8, 32, 32});
+        const double inset = 8 + (32 - kCloseControl) / 2;
+        m_close->setGeometry({inset, inset, kCloseControl, kCloseControl});
     }
 
     // The empty parts of the window move it.
@@ -108,7 +113,7 @@ Label* SmallDialog::addTitle(const std::string& text)
         m_texts = m_column->addChild<Column>();
         m_texts->setSpacing(4);
         // Clear of the close corner of the window.
-        m_texts->setLayoutHints({.fillWidth = true, .margins = {0, 0, 32, 0}});
+        m_texts->setLayoutHints({.fillWidth = true, .margins = {32, 0, 0, 0}});
     }
     Label* label = m_texts->addChild<Label>(text);
     label->setFontSize(TitleSize);
@@ -260,7 +265,7 @@ CalendarDialog::CalendarDialog(Window* parent, CalendarModel* model, std::option
     Label* title = column()->addChild<Label>(calendar ? tr("Edit Calendar") : tr("New Calendar"));
     title->setFontSize(TitleSize);
     title->setWeight(600);
-    title->setLayoutHints({.fillWidth = true, .margins = {0, 0, 32, 0}});
+    title->setLayoutHints({.fillWidth = true, .margins = {32, 0, 0, 0}});
     title->setName("dialogTitle");
 
     m_name = column()->addChild<TextField>(calendar ? calendar->name : std::string());
