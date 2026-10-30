@@ -13,6 +13,7 @@
 #include <ui/search_field.h>
 #include <ui/segmented_control.h>
 #include <ui/window.h>
+#include <ui/window_header.h>
 
 #include <algorithm>
 #include <cmath>
@@ -91,15 +92,17 @@ void NavigationButton::pointerRelease(const PointerEvent& event)
 
 HeaderBar::HeaderBar(CalendarWindow* window)
     : m_window(window)
-    , m_title(addChild<Label>(tr("Calendar")))
+    , m_title(addChild<Label>())
     , m_sidebarButton(addChild<HeaderButton>(std::string(), ButtonSize))
     , m_viewSwitch(addChild<SegmentedControl>(std::vector<std::string>{tr("Day"), tr("Week"), tr("Month"), tr("Year")}))
     , m_search(addChild<SearchField>(tr("Search events")))
     , m_menuButton(addChild<HeaderButton>("menu", ButtonSize))
 {
-    m_title->setName("applicationTitle");
+    // Never shown: the window buttons centre on its capitals.
+    m_title->setName("buttonsMetrics");
     m_title->setFontSize(Style::points(11));
     m_title->setBaseline(CalendarWindow::HeaderBaseline);
+    m_title->setVisible(false);
     m_sidebarButton->setName("sidebarButton");
     m_sidebarButton->setGlyph("calendar-sidebar", 24);
     m_sidebarButton->onClicked = [window] { window->toggleSidebar(); };
@@ -138,15 +141,10 @@ void HeaderBar::layout()
     const bool docked = m_window->sidebarDocked();
     const bool overlay = m_window->sidebarOverlay();
 
-    // The toggle ends at the sidebar's edge.
-    double x = docked ? 20 : 12;
-    m_title->setVisible(docked);
-    m_title->setColor(window && window->isActive() ? theme.text : theme.disabledText);
-    if (docked) {
-        const double width = CalendarWindow::SidebarWidth - 20 - 12 - ButtonSize - 12;
-        m_title->setGeometry({x, 0, width, geometry().height});
-        x += width + 12;
-    }
+    // The toggle ends at the sidebar's edge, or follows the window buttons.
+    const WindowHeader* header = dynamic_cast<const WindowHeader*>(parent());
+    const double inset = header ? header->leadingInset() : 0;
+    double x = docked ? CalendarWindow::SidebarWidth - 12 - ButtonSize : inset + 11;
     m_sidebarButton->setChecked(overlay);
     m_sidebarButton->setGeometry({x, top, ButtonSize, ButtonSize});
     const double startEnd = x + ButtonSize;

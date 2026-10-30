@@ -176,6 +176,7 @@ CalendarRoot::CalendarRoot(CalendarWindow* window)
     , m_header(addChild<WindowHeader>(CalendarWindow::HeaderHeight))
 {
     m_headerBar = m_header->setContent<HeaderBar>(window);
+    m_header->setContentUnderButtons(true);
 }
 
 CalendarRoot::~CalendarRoot() = default;
