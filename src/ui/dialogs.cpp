@@ -487,9 +487,9 @@ public:
         : m_scroll(addChild<ScrollView>())
     {
         setName("holidayList");
-        m_scroll->setClipsChildren(true);
+        m_scroll->setCornerRadius(Theme::current().mediumRadius);
         m_column = m_scroll->setContent<Column>();
-        m_column->setMargins({Inset, 0, Inset, 0});
+        m_column->setMargins(Margins::all(Inset));
         m_column->setSpacing(0);
     }
 
@@ -502,8 +502,7 @@ public:
 protected:
     void layout() override
     {
-        // Rows stop short of the rounded corners as they scroll.
-        m_scroll->setGeometry({0, Inset, geometry().width, std::max(0.0, geometry().height - 2 * Inset)});
+        m_scroll->setGeometry(localRect());
     }
 
     void paint(Painter& painter) override
