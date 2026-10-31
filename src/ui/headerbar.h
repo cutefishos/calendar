@@ -47,8 +47,8 @@ private:
     bool m_pressed = false;
 };
 
-// The title bar's tools: the application title and the sidebar button at
-// the start, the view switch in the middle, search and the menu at the end.
+// The title bar's tools: the sidebar button at the start, the view switch in
+// the middle, search at the end.
 class HeaderBar : public cutefish::ui::View
 {
 public:
@@ -58,7 +58,6 @@ public:
     // Where the window buttons go from the top: on the title's capitals.
     double buttonsTopMargin() const;
     cutefish::ui::SearchField* searchField() const { return m_search; }
-    cutefish::ui::HeaderButton* menuButton() const { return m_menuButton; }
     cutefish::ui::HeaderButton* sidebarButton() const { return m_sidebarButton; }
 
     std::function<void(const std::string& text)> onSearchChanged;
@@ -72,7 +71,6 @@ private:
     cutefish::ui::HeaderButton* m_sidebarButton;
     cutefish::ui::SegmentedControl* m_viewSwitch;
     cutefish::ui::SearchField* m_search;
-    cutefish::ui::HeaderButton* m_menuButton;
     std::vector<cutefish::base::Subscription> m_subscriptions;
 };
 

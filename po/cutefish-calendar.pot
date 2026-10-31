@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cutefish-calendar\n"
 "Report-Msgid-Bugs-To: https://github.com/cutefishos\n"
-"POT-Creation-Date: 2026-10-19 22:20+0800\n"
+"POT-Creation-Date: 2026-10-31 15:53+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -99,8 +99,7 @@ msgstr ""
 msgid "This calendar is not a subscription."
 msgstr ""
 
-#: src/ui/calendarwindow.cpp src/ui/eventdialog.cpp src/ui/headerbar.cpp
-#: cutefish-calendar.desktop
+#: src/ui/calendarwindow.cpp src/ui/eventdialog.cpp cutefish-calendar.desktop
 msgid "Calendar"
 msgstr ""
 
@@ -187,26 +186,6 @@ msgid "Delete…"
 msgstr ""
 
 #: src/ui/calendarwindow.cpp
-msgid "New Calendar…"
-msgstr ""
-
-#: src/ui/calendarwindow.cpp
-msgid "New Subscription…"
-msgstr ""
-
-#: src/ui/calendarwindow.cpp
-msgid "Import…"
-msgstr ""
-
-#: src/ui/calendarwindow.cpp src/ui/dialogs.cpp
-msgid "Settings"
-msgstr ""
-
-#: src/ui/calendarwindow.cpp
-msgid "About Calendar"
-msgstr ""
-
-#: src/ui/calendarwindow.cpp
 #, python-brace-format
 msgid "Subscribed to “{name}”"
 msgstr ""
@@ -278,6 +257,102 @@ msgstr ""
 msgid "Keeps track of your events."
 msgstr ""
 
+#: src/ui/calendarwindow.cpp
+msgid "About Calendar"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Settings…"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Hide Calendar"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Quit Calendar"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "File"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "New Calendar…"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "New Subscription…"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Import…"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit Event…"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Find"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "View"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Day"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Week"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Month"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Year"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Hide Sidebar"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Go to Today"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Previous"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Next"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Show Sidebar"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Window"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Minimize"
+msgstr ""
+
+#: src/ui/calendarwindow.cpp
+msgid "Zoom"
+msgstr ""
+
 #: src/ui/dialogs.cpp src/ui/eventdialog.cpp
 msgid "Cancel"
 msgstr ""
@@ -339,6 +414,10 @@ msgstr[1] ""
 
 #: src/ui/dialogs.cpp
 msgid "Add to"
+msgstr ""
+
+#: src/ui/dialogs.cpp
+msgid "Settings"
 msgstr ""
 
 #: src/ui/dialogs.cpp
@@ -523,22 +602,6 @@ msgstr[1] ""
 #: src/ui/eventviews.cpp
 #, python-brace-format
 msgid "until {time}"
-msgstr ""
-
-#: src/ui/headerbar.cpp
-msgid "Day"
-msgstr ""
-
-#: src/ui/headerbar.cpp
-msgid "Week"
-msgstr ""
-
-#: src/ui/headerbar.cpp
-msgid "Month"
-msgstr ""
-
-#: src/ui/headerbar.cpp
-msgid "Year"
 msgstr ""
 
 #: src/ui/headerbar.cpp

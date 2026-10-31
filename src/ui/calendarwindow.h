@@ -111,7 +111,6 @@ public:
     void showEventMenu(const EventItem& item, cutefish::ui::PointF position);
     void showDayMenu(Date date, cutefish::ui::PointF position);
     void showCalendarMenu(const CalendarItem& calendar, cutefish::ui::PointF position);
-    void showMainMenu(cutefish::ui::View* button);
 
     void newCalendar();
     void newSubscription();
@@ -149,12 +148,16 @@ private:
     void confirmDeleteCalendar(const CalendarItem& calendar);
     void exportCalendar(const CalendarItem& calendar);
     void installShortcuts();
+    // The menus the status bar shows while the window is active.
+    void buildMainMenu();
     void updateSidebarState(bool animate);
     // The views, which show text.
     void buildContent();
     void retranslate();
 
     CalendarModel* m_model;
+    // The window shows it until the window goes, so it outlives the window.
+    std::unique_ptr<cutefish::ui::Menu> m_mainMenu;
     std::unique_ptr<cutefish::ui::Window> m_window;
     CalendarRoot* m_root = nullptr;
 
@@ -172,7 +175,6 @@ private:
     std::unique_ptr<cutefish::ui::Animation> m_revealAnimation;
     std::unique_ptr<cutefish::ui::Animation> m_dockAnimation;
 
-    std::unique_ptr<cutefish::ui::Menu> m_mainMenu;
     std::unique_ptr<cutefish::ui::Menu> m_contextMenu;
     std::unique_ptr<EventDialog> m_editor;
     std::unique_ptr<ScopeDialog> m_scopeDialog;

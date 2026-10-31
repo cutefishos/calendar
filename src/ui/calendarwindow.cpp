@@ -17,7 +17,6 @@
 #include <ui/application.h>
 #include <ui/dialog_window.h>
 #include <ui/file_chooser.h>
-#include <ui/header_button.h>
 #include <ui/keys.h>
 #include <ui/menu.h>
 #include <ui/search_field.h>
@@ -103,6 +102,7 @@ CalendarWindow::CalendarWindow(CalendarModel* model, bool restoresSize)
     m_subscriptions.push_back(model->weekStartChanged.connect([this] { currentDateChanged.emit(); }));
     m_languageChanged = Application::instance()->languageChanged.connect([this] { retranslate(); });
     installShortcuts();
+    buildMainMenu();
 }
 
 CalendarWindow::~CalendarWindow() = default;
@@ -133,15 +133,13 @@ void CalendarWindow::retranslate()
     if (view() == "day" || view() == "week")
         scrollTop = static_cast<TimeGridView*>(m_root->content()->currentView())->scrollTop();
 
-    if (m_mainMenu)
-        m_mainMenu->close();
-    m_mainMenu.reset();
     m_contextMenu.reset();
     if (m_scopeDialog)
         m_scopeDialog->close();
     m_confirmDialog.reset();
 
     buildContent();
+    buildMainMenu();
     search = m_root->headerBar()->searchField();
     search->setText(searchText);
     m_root->content()->setSearchText(searchText);
@@ -580,40 +578,6 @@ void CalendarWindow::showCalendarMenu(const CalendarItem& calendar, PointF posit
     m_contextMenu->popup(m_window.get(), position);
 }
 
-// The button's round plate, which the menu hangs from: inset a tenth of the
-// button, as long as the 24 px artwork's device-pixel parity allows.
-static RectF plateRect(View* button)
-{
-    const double scale = button->window() ? button->window()->scale() : 1;
-    const double size = button->geometry().width;
-    const double iconSize = 24;
-    double pixels = std::round((size - 2 * std::round(size * 0.1)) * scale);
-    if (int(pixels - std::round(iconSize * scale)) % 2 != 0)
-        pixels -= 1;
-    const double plate = pixels / scale;
-    const double offset = std::round((size - iconSize) / 2) + (iconSize - plate) / 2;
-    return {offset, offset, plate, plate};
-}
-
-void CalendarWindow::showMainMenu(View* button)
-{
-    m_mainMenu = std::make_unique<Menu>();
-    m_mainMenu->addItem(tr("New Event"), [this] { newEventOn(m_currentDate); }, "Ctrl+N");
-    m_mainMenu->addItem(tr("New Calendar…"), [this] { newCalendar(); });
-    m_mainMenu->addItem(tr("New Subscription…"), [this] { newSubscription(); });
-    m_mainMenu->addItem(tr("Import…"), [this] { openImportChooser(); });
-    m_mainMenu->addSeparator();
-    const size_t undo = m_mainMenu->addItem(m_model->canUndo() ? m_model->undoText() : std::string(tr("Undo")),
-                                            [this] { m_model->undo(); }, "Ctrl+Z");
-    m_mainMenu->setItemEnabled(undo, m_model->canUndo());
-    m_mainMenu->addSeparator();
-    m_mainMenu->addItem(tr("Settings"), [this] { openSettings(); }, "Ctrl+,");
-    m_mainMenu->addItem(tr("About Calendar"), [this] { openAbout(); });
-    m_mainMenu->onClosed = [this] { m_root->headerBar()->menuButton()->setChecked(false); };
-    m_root->headerBar()->menuButton()->setChecked(true);
-    m_mainMenu->popupFor(button, 3, plateRect(button));
-}
-
 void CalendarWindow::newCalendar()
 {
     editCalendar({});
@@ -799,6 +763,7 @@ void CalendarWindow::installShortcuts()
             m_model->undo();
     });
     window->addShortcut(ControlModifier, uint32_t(','), [this] { openSettings(); });
+    window->addShortcut(ControlModifier, key::letter('q'), [] { Application::instance()->quit(); });
     window->addShortcut(NoModifier, key::Escape, [this] {
         TextField* search = m_root->headerBar()->searchField();
         if (search->hasFocus()) {
@@ -809,4 +774,90 @@ void CalendarWindow::installShortcuts()
             setSidebarOverlay(false);
         }
     });
+}
+
+void CalendarWindow::buildMainMenu()
+{
+    m_window->setMainMenu(nullptr);
+    m_mainMenu = std::make_unique<Menu>();
+
+    Menu* application = m_mainMenu->addSubmenu(tr("Calendar"));
+    application->setRole(MenuRole::Application);
+    application->addItem(tr("About Calendar"), [this] { openAbout(); });
+    application->addSeparator();
+    const size_t settings = application->addItem(tr("Settings…"), [this] { openSettings(); });
+    application->setItemKeyEquivalent(settings, ",", ControlModifier);
+    application->addSeparator();
+    application->addItem(tr("Hide Calendar"), [this] { m_window->hideApplication(); });
+    application->addSeparator();
+    const size_t quit = application->addItem(tr("Quit Calendar"), [] { Application::instance()->quit(); });
+    application->setItemKeyEquivalent(quit, "q", ControlModifier);
+
+    Menu* file = m_mainMenu->addSubmenu(tr("File"));
+    const size_t newEvent = file->addItem(tr("New Event"), [this] { newEventOn(m_currentDate); });
+    file->setItemKeyEquivalent(newEvent, "n", ControlModifier);
+    file->addItem(tr("New Calendar…"), [this] { newCalendar(); });
+    file->addItem(tr("New Subscription…"), [this] { newSubscription(); });
+    file->addSeparator();
+    file->addItem(tr("Import…"), [this] { openImportChooser(); });
+
+    Menu* edit = m_mainMenu->addSubmenu(tr("Edit"));
+    const size_t undo = edit->addItem(tr("Undo"), [this] {
+        if (m_model->canUndo())
+            m_model->undo();
+    });
+    edit->setItemKeyEquivalent(undo, "z", ControlModifier);
+    edit->addSeparator();
+    const size_t editEvent = edit->addItem(tr("Edit Event…"), [this] {
+        if (hasSelection())
+            editSelected();
+    });
+    edit->setItemKeyEquivalent(editEvent, "Return", NoModifier);
+    const size_t remove = edit->addItem(tr("Delete"), [this] {
+        if (hasSelection())
+            deleteSelected();
+    });
+    edit->setItemKeyEquivalent(remove, "Delete", NoModifier);
+    edit->addSeparator();
+    const size_t find = edit->addItem(tr("Find"), [this] { focusSearch(); });
+    edit->setItemKeyEquivalent(find, "f", ControlModifier);
+    edit->onAboutToShow = [this, edit, undo, editEvent, remove] {
+        edit->setItemText(undo, m_model->canUndo() ? m_model->undoText() : std::string(tr("Undo")));
+        edit->setItemEnabled(undo, m_model->canUndo());
+        const std::optional<EventForm> selected = hasSelection()
+                ? m_model->eventData(m_selectedKey, m_selectedRecurrenceKey)
+                : std::nullopt;
+        edit->setItemText(editEvent, selected && selected->readOnly ? tr("Show Details…") : tr("Edit Event…"));
+        edit->setItemEnabled(editEvent, selected.has_value());
+        edit->setItemEnabled(remove, selected && !selected->readOnly);
+    };
+
+    Menu* viewMenu = m_mainMenu->addSubmenu(tr("View"));
+    const std::vector<std::string> viewTitles{tr("Day"), tr("Week"), tr("Month"), tr("Year")};
+    for (size_t i = 0; i < Views.size(); ++i) {
+        const size_t row = viewMenu->addItem(viewTitles[i], [this, i] { setView(Views[i]); });
+        viewMenu->setItemKeyEquivalent(row, std::string(1, char('1' + i)), ControlModifier);
+    }
+    viewMenu->addSeparator();
+    const size_t sidebar = viewMenu->addItem(tr("Hide Sidebar"), [this] { toggleSidebar(); });
+    viewMenu->addSeparator();
+    const size_t today = viewMenu->addItem(tr("Go to Today"), [this] { goToday(); });
+    viewMenu->setItemKeyEquivalent(today, "t", ControlModifier);
+    const size_t previous = viewMenu->addItem(tr("Previous"), [this] { step(-1); });
+    viewMenu->setItemKeyEquivalent(previous, "Left", AltModifier);
+    const size_t next = viewMenu->addItem(tr("Next"), [this] { step(1); });
+    viewMenu->setItemKeyEquivalent(next, "Right", AltModifier);
+    viewMenu->onAboutToShow = [this, viewMenu, sidebar] {
+        for (size_t i = 0; i < Views.size(); ++i)
+            viewMenu->setItemChecked(i, Views[i] == view());
+        const bool shown = narrow() ? m_sidebarOverlay : m_model->sidebarVisible();
+        viewMenu->setItemText(sidebar, shown ? tr("Hide Sidebar") : tr("Show Sidebar"));
+    };
+
+    Menu* windowMenu = m_mainMenu->addSubmenu(tr("Window"));
+    windowMenu->setRole(MenuRole::Windows);
+    windowMenu->addItem(tr("Minimize"), [this] { m_window->minimize(); });
+    windowMenu->addItem(tr("Zoom"), [this] { m_window->setMaximized(!m_window->states().maximized); });
+
+    m_window->setMainMenu(m_mainMenu.get());
 }

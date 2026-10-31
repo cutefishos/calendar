@@ -96,7 +96,6 @@ HeaderBar::HeaderBar(CalendarWindow* window)
     , m_sidebarButton(addChild<HeaderButton>(std::string(), ButtonSize))
     , m_viewSwitch(addChild<SegmentedControl>(std::vector<std::string>{tr("Day"), tr("Week"), tr("Month"), tr("Year")}))
     , m_search(addChild<SearchField>(tr("Search events")))
-    , m_menuButton(addChild<HeaderButton>("menu", ButtonSize))
 {
     // Never shown: the window buttons centre on its capitals.
     m_title->setName("buttonsMetrics");
@@ -118,8 +117,6 @@ HeaderBar::HeaderBar(CalendarWindow* window)
         if (onSearchChanged)
             onSearchChanged(m_search->text());
     };
-    m_menuButton->setName("menuButton");
-    m_menuButton->onClicked = [this, window] { window->showMainMenu(m_menuButton); };
 
     m_subscriptions.push_back(window->viewChanged.connect([this] { requestLayout(); }));
     m_subscriptions.push_back(window->sidebarChanged.connect([this] { requestLayout(); }));
@@ -149,13 +146,14 @@ void HeaderBar::layout()
     m_sidebarButton->setGeometry({x, top, ButtonSize, ButtonSize});
     const double startEnd = x + ButtonSize;
 
-    double end = geometry().width;
-    end -= ButtonSize;
-    m_menuButton->setGeometry({end, top, ButtonSize, ButtonSize});
-    end -= 12;
+    // As far from the end as from the top, in the whole device pixels both
+    // are drawn at: the window shows only whole ones of a fractional width.
+    const double scale = window ? window->scale() : 1;
+    const double searchTop = top + (ButtonSize - 30) / 2;
+    double end = (std::floor(geometry().width * scale) - std::round(searchTop * scale)) / scale;
     const double searchWidth = windowWidth >= 1000 ? 220 : 160;
     end -= searchWidth;
-    m_search->setGeometry({end, top + (ButtonSize - 30) / 2, searchWidth, 30});
+    m_search->setGeometry({end, searchTop, searchWidth, 30});
     m_search->setFill(Style::controlTint());
     m_search->setGlyphColor(theme.disabledText);
     m_search->setOpacity(overlay ? 0 : 1);

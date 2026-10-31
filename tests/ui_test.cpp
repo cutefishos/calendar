@@ -18,6 +18,7 @@
 #include <ui/drag.h>
 #include <ui/label.h>
 #include <ui/keys.h>
+#include <ui/menu.h>
 #include <ui/scroll_view.h>
 #include <ui/test_input.h>
 #include <ui/text_field.h>
@@ -606,6 +607,25 @@ TEST_F(UiTest, EscapeClosesTheDatePickerBeforeTheEditor)
     TestInput::typeKey(*dialog, key::Escape);
     runPosted();
     EXPECT_FALSE(window.editor());
+}
+
+TEST_F(UiTest, WindowShowsItsMenusInTheStatusBar)
+{
+    CalendarWindow& window = open();
+    Menu* menu = window.window()->mainMenu();
+    ASSERT_TRUE(menu);
+    const std::vector<MenuRole> roles{MenuRole::Application, MenuRole::None, MenuRole::None, MenuRole::None,
+                                      MenuRole::Windows};
+    for (size_t i = 0; i < roles.size(); ++i) {
+        ASSERT_TRUE(menu->submenu(i)) << i;
+        EXPECT_EQ(menu->submenu(i)->role(), roles[i]) << i;
+    }
+    EXPECT_FALSE(menu->submenu(roles.size()));
+
+    Application::instance()->languageChanged.emit();
+    advance(*window.window(), 300);
+    ASSERT_TRUE(window.window()->mainMenu());
+    EXPECT_EQ(window.window()->mainMenu()->submenu(0)->role(), MenuRole::Application);
 }
 
 TEST_F(UiTest, LanguageChangeKeepsWhereTheUserWas)
