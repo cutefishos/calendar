@@ -97,6 +97,8 @@ EventDialog::EventDialog(Window* parent, CalendarModel* model, EventForm event)
     , m_event(std::move(event))
     , m_dialog(std::make_unique<DialogWindow>(parent, dialogTitle(m_event), 480))
 {
+    // Cancel or Close closes it.
+    m_dialog->setCloseVisible(false);
     m_allDay = m_event.allDay;
     m_startDate = m_event.start.date();
     m_endDate = m_event.end.date();

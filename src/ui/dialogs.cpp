@@ -16,7 +16,6 @@
 #include <ui/combo_box.h>
 #include <ui/dialog_window.h>
 #include <ui/drop_down_popup.h>
-#include <ui/header_button.h>
 #include <ui/icon.h>
 #include <ui/keys.h>
 #include <ui/label.h>
@@ -46,22 +45,16 @@ static void release(std::unique_ptr<Window>& window)
     Application::instance()->loop().post([doomed] {});
 }
 
-// The close control, centred in the 32-pixel corner slot.
-static constexpr double kCloseControl = 26;
-
-// The dialog's view: its column, and the close button in the corner over it.
+// The dialog's view: its column. Its Cancel button closes it, so it has no
+// window controls.
 class SmallDialog::Root : public View
 {
 public:
-    explicit Root(SmallDialog* dialog)
-        : m_dialog(dialog)
-        , m_column(addChild<ColumnLayout>())
-        , m_close(addChild<HeaderButton>("close", kCloseControl))
+    Root()
+        : m_column(addChild<ColumnLayout>())
     {
         m_column->setPadding({16, 16, 16, 12});
         m_column->setSpacing(16);
-        m_close->setWindowControl(true);
-        m_close->onClicked = [this] { m_dialog->close(); };
     }
 
     ColumnLayout* column() const { return m_column; }
@@ -73,8 +66,6 @@ protected:
     void layout() override
     {
         m_column->setGeometry({0, 0, geometry().width, m_column->heightForWidth(geometry().width)});
-        const double inset = 8 + (32 - kCloseControl) / 2;
-        m_close->setGeometry({inset, inset, kCloseControl, kCloseControl});
     }
 
     // The empty parts of the window move it.
@@ -85,9 +76,7 @@ protected:
     }
 
 private:
-    SmallDialog* m_dialog;
     ColumnLayout* m_column;
-    HeaderButton* m_close;
 };
 
 SmallDialog::SmallDialog(Window* parent, std::string title, double width)
@@ -95,7 +84,7 @@ SmallDialog::SmallDialog(Window* parent, std::string title, double width)
     , m_window(std::make_unique<Window>())
     , m_width(width)
 {
-    auto root = std::make_unique<Root>(this);
+    auto root = std::make_unique<Root>();
     m_column = root->column();
     m_window->setContentView(std::move(root));
     m_window->setBackgroundColor(ColorId::SecondBackground);
@@ -112,8 +101,7 @@ Label* SmallDialog::addTitle(const std::string& text)
     if (!m_texts) {
         m_texts = m_column->addChild<Column>();
         m_texts->setSpacing(4);
-        // Clear of the close corner of the window.
-        m_texts->setLayoutHints({.fillWidth = true, .margins = {32, 0, 0, 0}});
+        m_texts->setLayoutHints({.fillWidth = true});
     }
     Label* label = m_texts->addChild<Label>(text);
     label->setFontSize(TitleSize);
@@ -265,7 +253,7 @@ CalendarDialog::CalendarDialog(Window* parent, CalendarModel* model, std::option
     Label* title = column()->addChild<Label>(calendar ? tr("Edit Calendar") : tr("New Calendar"));
     title->setFontSize(TitleSize);
     title->setWeight(600);
-    title->setLayoutHints({.fillWidth = true, .margins = {32, 0, 0, 0}});
+    title->setLayoutHints({.fillWidth = true});
     title->setName("dialogTitle");
 
     m_name = column()->addChild<TextField>(calendar ? calendar->name : std::string());
