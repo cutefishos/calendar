@@ -5,6 +5,8 @@ year, with repeating events, alerts and several coloured calendars, and reads
 and writes standard iCalendar files. Calendars published on the web, such as
 public holidays, can be subscribed to and are kept up to date.
 
+<img src="screenshots/calendar.png" alt="Calendar" width="945">
+
 Events are kept as one `.ics` file per event in
 `~/.local/share/cutefish-calendar/calendars/`, one directory per calendar.
 `cutefish-calendar-reminders` starts with the session and shows alerts as
