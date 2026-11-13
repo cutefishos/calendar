@@ -3,5 +3,5 @@
 
 #pragma once
 
-// The calendar's own glyphs, "calendar-add" and "calendar-sidebar".
+// The calendar's own glyph, "calendar-add".
 void registerCalendarGlyphs();

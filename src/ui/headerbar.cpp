@@ -103,7 +103,7 @@ HeaderBar::HeaderBar(CalendarWindow* window)
     m_title->setBaseline(CalendarWindow::HeaderBaseline);
     m_title->setVisible(false);
     m_sidebarButton->setName("sidebarButton");
-    m_sidebarButton->setGlyph("calendar-sidebar", 24);
+    m_sidebarButton->setGlyph("sidebar", 24);
     m_sidebarButton->onClicked = [window] { window->toggleSidebar(); };
     m_viewSwitch->setName("viewSwitch");
     m_viewSwitch->setFontSize(Style::points(9));
