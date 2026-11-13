@@ -1,0 +1,648 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cutefish-calendar\n"
+"Report-Msgid-Bugs-To: https://github.com/cutefishos\n"
+"POT-Creation-Date: 2026-10-31 15:53+0800\n"
+"PO-Revision-Date: 2026-10-31 15:53+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/calendarmodel.cpp
+msgid "Personal"
+msgstr "Personal"
+
+#: src/calendarmodel.cpp
+msgid "Undo New Event"
+msgstr "Deshacer nuevo evento"
+
+#: src/calendarmodel.cpp
+msgid "Undo Edit"
+msgstr "Deshacer edición"
+
+#: src/calendarmodel.cpp
+msgid "Undo Delete"
+msgstr "Deshacer eliminación"
+
+#: src/calendarmodel.cpp
+msgid "Undo Move"
+msgstr "Deshacer movimiento"
+
+#: src/reminderservice.cpp
+msgid "Today, all day"
+msgstr "Hoy, todo el día"
+
+#: src/reminderservice.cpp
+msgid "Tomorrow, all day"
+msgstr "Mañana, todo el día"
+
+#. TRANSLATORS: a time range, such as "9:00 – 10:00".
+#: src/reminderservice.cpp src/ui/eventviews.cpp src/ui/timegridview.cpp
+#, python-brace-format
+msgid "{start} – {end}"
+msgstr "{start} – {end}"
+
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "Tomorrow, {time}"
+msgstr "Mañana, {time}"
+
+#. TRANSLATORS: a reminder's date and time, such as "Wednesday, 7 October, 9:00 – 10:00".
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "{date}, {time}"
+msgstr "{date}, {time}"
+
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "Snooze {n} Minute"
+msgid_plural "Snooze {n} Minutes"
+msgstr[0] "Posponer {n} minuto"
+msgstr[1] "Posponer {n} minutos"
+
+#: src/reminderservice.cpp src/ui/calendarwindow.cpp src/ui/eventdialog.cpp src/ui/eventviews.cpp src/ui/searchresults.cpp
+msgid "New Event"
+msgstr "Nuevo evento"
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be reached."
+msgstr "No se pudo acceder al calendario."
+
+#: src/subscriptions.cpp
+#, python-brace-format
+msgid "The server answered with error {status}."
+msgstr "El servidor respondió con el error {status}."
+
+#: src/subscriptions.cpp
+msgid "There is no calendar at this address."
+msgstr "No hay ningún calendario en esta dirección."
+
+#: src/subscriptions.cpp src/ui/dialogs.cpp
+msgid "This is not a web address."
+msgstr "Esta no es una dirección web."
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be read."
+msgstr "No se pudo leer el calendario."
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be saved."
+msgstr "No se pudo guardar el calendario."
+
+#: src/subscriptions.cpp
+msgid "This calendar is not a subscription."
+msgstr "Este calendario no es una suscripción."
+
+#: src/ui/calendarwindow.cpp src/ui/eventdialog.cpp cutefish-calendar.desktop
+msgid "Calendar"
+msgstr "Calendario"
+
+#: src/ui/calendarwindow.cpp
+msgid "Save changes to this repeating event?"
+msgstr "¿Guardar los cambios en este evento repetido?"
+
+#: src/ui/calendarwindow.cpp
+msgid "The new repeat applies to this and the following events."
+msgstr "La nueva repetición se aplica a este evento y a los siguientes."
+
+#: src/ui/calendarwindow.cpp
+msgid "Change only this event, or this and the events after it?"
+msgstr "¿Cambiar solo este evento, o este y los siguientes?"
+
+#: src/ui/calendarwindow.cpp
+msgid "Only This Event"
+msgstr "Solo este evento"
+
+#: src/ui/calendarwindow.cpp
+msgid "All Events"
+msgstr "Todos los eventos"
+
+#: src/ui/calendarwindow.cpp
+msgid "All Future Events"
+msgstr "Todos los eventos futuros"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "“{title}” deleted"
+msgstr "Se eliminó “{title}”"
+
+#: src/ui/calendarwindow.cpp
+msgid "Undo"
+msgstr "Deshacer"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Delete “{title}”?"
+msgstr "¿Eliminar “{title}”?"
+
+#: src/ui/calendarwindow.cpp
+msgid "This is a repeating event."
+msgstr "Este es un evento repetido."
+
+#: src/ui/calendarwindow.cpp
+msgid "Move this repeating event?"
+msgstr "¿Mover este evento repetido?"
+
+#: src/ui/calendarwindow.cpp
+msgid "Move only this event, or this and the events after it?"
+msgstr "¿Mover solo este evento, o este y los siguientes?"
+
+#: src/ui/calendarwindow.cpp
+msgid "Show Details…"
+msgstr "Mostrar detalles…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit…"
+msgstr "Editar…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Delete"
+msgstr "Eliminar"
+
+#: src/ui/calendarwindow.cpp
+msgid "New All-Day Event"
+msgstr "Nuevo evento de todo el día"
+
+#: src/ui/calendarwindow.cpp
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: src/ui/calendarwindow.cpp
+msgid "Export…"
+msgstr "Exportar…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Unsubscribe…"
+msgstr "Cancelar suscripción…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Delete…"
+msgstr "Eliminar…"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Subscribed to “{name}”"
+msgstr "Suscrito a “{name}”"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "“{name}” could not be refreshed. {error}"
+msgstr "No se pudo actualizar “{name}”. {error}"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Unsubscribe from “{name}”?"
+msgstr "¿Cancelar la suscripción a “{name}”?"
+
+#: src/ui/calendarwindow.cpp
+msgid "Its events are removed from this computer."
+msgstr "Sus eventos se eliminarán de esta computadora."
+
+#: src/ui/calendarwindow.cpp
+msgid "Unsubscribe"
+msgstr "Cancelar suscripción"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Delete “{name}”?"
+msgstr "¿Eliminar “{name}”?"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Its event is moved to the trash."
+msgid_plural "Its {n} events are moved to the trash."
+msgstr[0] "Su evento se moverá a la papelera."
+msgstr[1] "Sus {n} eventos se moverán a la papelera."
+
+#: src/ui/calendarwindow.cpp
+msgid "Export"
+msgstr "Exportar"
+
+#. TRANSLATORS: keep the ASCII parentheses and the pattern in them unchanged.
+#: src/ui/calendarwindow.cpp
+msgid "Calendar files (*.ics)"
+msgstr "Archivos de calendario (*.ics)"
+
+#: src/ui/calendarwindow.cpp
+msgid "The calendar could not be exported."
+msgstr "No se pudo exportar el calendario."
+
+#: src/ui/calendarwindow.cpp
+msgid "No events could be read from the file."
+msgstr "No se pudo leer ningún evento del archivo."
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "{n} event imported"
+msgid_plural "{n} events imported"
+msgstr[0] "{n} evento importado"
+msgstr[1] "{n} eventos importados"
+
+#: src/ui/calendarwindow.cpp src/ui/dialogs.cpp
+msgid "Import"
+msgstr "Importar"
+
+#. TRANSLATORS: keep the ASCII parentheses and the pattern in them unchanged.
+#: src/ui/calendarwindow.cpp
+msgid "All files (*)"
+msgstr "Todos los archivos (*)"
+
+#: src/ui/calendarwindow.cpp
+msgid "Keeps track of your events."
+msgstr "Lleva el control de tus eventos."
+
+#: src/ui/calendarwindow.cpp
+msgid "About Calendar"
+msgstr "Acerca de Calendario"
+
+#: src/ui/calendarwindow.cpp
+msgid "Settings…"
+msgstr "Configuración…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Hide Calendar"
+msgstr "Ocultar Calendario"
+
+#: src/ui/calendarwindow.cpp
+msgid "Quit Calendar"
+msgstr "Salir de Calendario"
+
+#: src/ui/calendarwindow.cpp
+msgid "File"
+msgstr "Archivo"
+
+#: src/ui/calendarwindow.cpp
+msgid "New Calendar…"
+msgstr "Nuevo calendario…"
+
+#: src/ui/calendarwindow.cpp
+msgid "New Subscription…"
+msgstr "Nueva suscripción…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Import…"
+msgstr "Importar…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit"
+msgstr "Editar"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit Event…"
+msgstr "Editar evento…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Find"
+msgstr "Buscar"
+
+#: src/ui/calendarwindow.cpp
+msgid "View"
+msgstr "Ver"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Day"
+msgstr "Día"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Week"
+msgstr "Semana"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Month"
+msgstr "Mes"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Year"
+msgstr "Año"
+
+#: src/ui/calendarwindow.cpp
+msgid "Hide Sidebar"
+msgstr "Ocultar barra lateral"
+
+#: src/ui/calendarwindow.cpp
+msgid "Go to Today"
+msgstr "Ir a hoy"
+
+#: src/ui/calendarwindow.cpp
+msgid "Previous"
+msgstr "Anterior"
+
+#: src/ui/calendarwindow.cpp
+msgid "Next"
+msgstr "Siguiente"
+
+#: src/ui/calendarwindow.cpp
+msgid "Show Sidebar"
+msgstr "Mostrar barra lateral"
+
+#: src/ui/calendarwindow.cpp
+msgid "Window"
+msgstr "Ventana"
+
+#: src/ui/calendarwindow.cpp
+msgid "Minimize"
+msgstr "Minimizar"
+
+#: src/ui/calendarwindow.cpp
+msgid "Zoom"
+msgstr "Zoom"
+
+#: src/ui/dialogs.cpp src/ui/eventdialog.cpp
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: src/ui/dialogs.cpp
+msgid "Edit Calendar"
+msgstr "Editar calendario"
+
+#: src/ui/dialogs.cpp
+msgid "New Calendar"
+msgstr "Nuevo calendario"
+
+#: src/ui/dialogs.cpp
+msgid "Name"
+msgstr "Nombre"
+
+#: src/ui/dialogs.cpp src/ui/eventdialog.cpp
+msgid "Save"
+msgstr "Guardar"
+
+#: src/ui/dialogs.cpp
+msgid "Create"
+msgstr "Crear"
+
+#: src/ui/dialogs.cpp
+msgid "Public Holidays"
+msgstr "Días festivos"
+
+#: src/ui/dialogs.cpp
+msgid "New Subscription"
+msgstr "Nueva suscripción"
+
+#: src/ui/dialogs.cpp
+msgid "A calendar published on the web, such as public holidays. It is kept up to date and cannot be edited."
+msgstr "Un calendario publicado en la web, como los días festivos. Se mantiene actualizado y no se puede editar."
+
+#: src/ui/dialogs.cpp
+msgid "webcal:// or https:// address"
+msgstr "Dirección webcal:// o https://"
+
+#: src/ui/dialogs.cpp
+msgid "Subscribe"
+msgstr "Suscribirse"
+
+#: src/ui/dialogs.cpp
+msgid "Subscribing…"
+msgstr "Suscribiendo…"
+
+#: src/ui/dialogs.cpp
+msgid "Import Events"
+msgstr "Importar eventos"
+
+#: src/ui/dialogs.cpp
+#, python-brace-format
+msgid "{n} file"
+msgid_plural "{n} files"
+msgstr[0] "{n} archivo"
+msgstr[1] "{n} archivos"
+
+#: src/ui/dialogs.cpp
+msgid "Add to"
+msgstr "Agregar a"
+
+#: src/ui/dialogs.cpp
+msgid "Settings"
+msgstr "Configuración"
+
+#: src/ui/dialogs.cpp
+msgid "System Default"
+msgstr "Predeterminado del sistema"
+
+#: src/ui/dialogs.cpp
+msgid "Week Starts On"
+msgstr "La semana empieza el"
+
+#: src/ui/dialogs.cpp
+msgid "Show Week Numbers"
+msgstr "Mostrar números de semana"
+
+#: src/ui/eventdialog.cpp
+msgid "Event"
+msgstr "Evento"
+
+#: src/ui/eventdialog.cpp
+msgid "Edit Event"
+msgstr "Editar evento"
+
+#: src/ui/eventdialog.cpp
+msgid "Title"
+msgstr "Título"
+
+#: src/ui/eventdialog.cpp
+msgid "Location"
+msgstr "Ubicación"
+
+#: src/ui/eventdialog.cpp
+msgid "All Day"
+msgstr "Todo el día"
+
+#: src/ui/eventdialog.cpp
+msgid "Starts"
+msgstr "Empieza"
+
+#: src/ui/eventdialog.cpp
+msgid "Ends"
+msgstr "Termina"
+
+#: src/ui/eventdialog.cpp
+msgid "The event ends before it starts."
+msgstr "El evento termina antes de empezar."
+
+#: src/ui/eventdialog.cpp
+msgid "Never"
+msgstr "Nunca"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Day"
+msgstr "Cada día"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Weekday"
+msgstr "Cada día laborable"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Week"
+msgstr "Cada semana"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Month"
+msgstr "Cada mes"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Year"
+msgstr "Cada año"
+
+#: src/ui/eventdialog.cpp
+msgid "Custom"
+msgstr "Personalizada"
+
+#: src/ui/eventdialog.cpp
+msgid "Repeat"
+msgstr "Repetir"
+
+#: src/ui/eventdialog.cpp
+msgid "End Repeat"
+msgstr "Fin de la repetición"
+
+#: src/ui/eventdialog.cpp
+msgid "On Date"
+msgstr "En una fecha"
+
+#. TRANSLATORS: as in "After 3 times".
+#: src/ui/eventdialog.cpp
+msgid "After"
+msgstr "Después de"
+
+#: src/ui/eventdialog.cpp
+msgid "Alert"
+msgstr "Alerta"
+
+#: src/ui/eventdialog.cpp
+msgid "Notes"
+msgstr "Notas"
+
+#: src/ui/eventdialog.cpp
+msgid "Close"
+msgstr "Cerrar"
+
+#: src/ui/eventdialog.cpp
+msgid "Delete Event"
+msgstr "Eliminar evento"
+
+#: src/ui/eventdialog.cpp
+msgid "Add"
+msgstr "Agregar"
+
+#: src/ui/eventdialog.cpp
+msgid "None"
+msgstr "Ninguna"
+
+#: src/ui/eventdialog.cpp
+msgid "On the Day (9:00)"
+msgstr "El mismo día (9:00)"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Day Before (9:00)"
+msgid_plural "{n} Days Before (9:00)"
+msgstr[0] "{n} día antes (9:00)"
+msgstr[1] "{n} días antes (9:00)"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Week Before (9:00)"
+msgid_plural "{n} Weeks Before (9:00)"
+msgstr[0] "{n} semana antes (9:00)"
+msgstr[1] "{n} semanas antes (9:00)"
+
+#: src/ui/eventdialog.cpp
+msgid "At Time of Event"
+msgstr "A la hora del evento"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Minute Before"
+msgid_plural "{n} Minutes Before"
+msgstr[0] "{n} minuto antes"
+msgstr[1] "{n} minutos antes"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Hour Before"
+msgid_plural "{n} Hours Before"
+msgstr[0] "{n} hora antes"
+msgstr[1] "{n} horas antes"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Day Before"
+msgid_plural "{n} Days Before"
+msgstr[0] "{n} día antes"
+msgstr[1] "{n} días antes"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Week Before"
+msgid_plural "{n} Weeks Before"
+msgstr[0] "{n} semana antes"
+msgstr[1] "{n} semanas antes"
+
+#. TRANSLATORS: after "After" and a number field, as in "After 3 times".
+#: src/ui/eventdialog.cpp
+msgid "time"
+msgid_plural "times"
+msgstr[0] "vez"
+msgstr[1] "veces"
+
+#. TRANSLATORS: the events of a day that do not fit in it, as in "3 more".
+#: src/ui/eventviews.cpp
+#, python-brace-format
+msgid "{n} more"
+msgid_plural "{n} more"
+msgstr[0] "{n} más"
+msgstr[1] "{n} más"
+
+#. TRANSLATORS: an event that began on an earlier day, such as "until 10:00".
+#: src/ui/eventviews.cpp
+#, python-brace-format
+msgid "until {time}"
+msgstr "hasta las {time}"
+
+#: src/ui/headerbar.cpp
+msgid "Search events"
+msgstr "Buscar eventos"
+
+#: src/ui/headerbar.cpp src/ui/searchresults.cpp
+msgid "Today"
+msgstr "Hoy"
+
+#: src/ui/searchresults.cpp
+msgid "All day"
+msgstr "Todo el día"
+
+#: src/ui/searchresults.cpp
+msgid "Tomorrow"
+msgstr "Mañana"
+
+#: src/ui/searchresults.cpp
+msgid "No Events Found"
+msgstr "No se encontraron eventos"
+
+#: src/ui/sidebar.cpp
+msgid "Calendars"
+msgstr "Calendarios"
+
+#: src/ui/sidebar.cpp
+msgid "Subscriptions"
+msgstr "Suscripciones"
+
+#. TRANSLATORS: the label of the all-day row in the day and week views, in a narrow column beside it.
+#: src/ui/timegridview.cpp
+msgid "all-day"
+msgstr "todo el día"
+
+#: cutefish-calendar.desktop
+msgid "Keep track of events and appointments"
+msgstr "Lleva el control de tus eventos y citas"
+
+#: cutefish-calendar.desktop
+msgid "Events;Appointments;Schedule;Date;"
+msgstr "Eventos;Citas;Agenda;Fecha;Calendario;"
+
+#: cutefish-calendar-reminders.desktop
+msgid "Calendar Reminders"
+msgstr "Recordatorios de Calendario"

@@ -1,0 +1,637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cutefish-calendar\n"
+"Report-Msgid-Bugs-To: https://github.com/cutefishos\n"
+"POT-Creation-Date: 2026-10-31 15:53+0800\n"
+"PO-Revision-Date: 2026-10-31 15:53+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/calendarmodel.cpp
+msgid "Personal"
+msgstr "个人"
+
+#: src/calendarmodel.cpp
+msgid "Undo New Event"
+msgstr "撤销新建日程"
+
+#: src/calendarmodel.cpp
+msgid "Undo Edit"
+msgstr "撤销编辑"
+
+#: src/calendarmodel.cpp
+msgid "Undo Delete"
+msgstr "撤销删除"
+
+#: src/calendarmodel.cpp
+msgid "Undo Move"
+msgstr "撤销移动"
+
+#: src/reminderservice.cpp
+msgid "Today, all day"
+msgstr "今天，全天"
+
+#: src/reminderservice.cpp
+msgid "Tomorrow, all day"
+msgstr "明天，全天"
+
+#. TRANSLATORS: a time range, such as "9:00 – 10:00".
+#: src/reminderservice.cpp src/ui/eventviews.cpp src/ui/timegridview.cpp
+#, python-brace-format
+msgid "{start} – {end}"
+msgstr "{start} – {end}"
+
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "Tomorrow, {time}"
+msgstr "明天 {time}"
+
+#. TRANSLATORS: a reminder's date and time, such as "Wednesday, 7 October, 9:00 – 10:00".
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "{date}, {time}"
+msgstr "{date} {time}"
+
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "Snooze {n} Minute"
+msgid_plural "Snooze {n} Minutes"
+msgstr[0] "{n} 分钟后再次提醒"
+
+#: src/reminderservice.cpp src/ui/calendarwindow.cpp src/ui/eventdialog.cpp
+#: src/ui/eventviews.cpp src/ui/searchresults.cpp
+msgid "New Event"
+msgstr "新建日程"
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be reached."
+msgstr "无法连接到日历。"
+
+#: src/subscriptions.cpp
+#, python-brace-format
+msgid "The server answered with error {status}."
+msgstr "服务器返回了错误 {status}。"
+
+#: src/subscriptions.cpp
+msgid "There is no calendar at this address."
+msgstr "此地址没有日历。"
+
+#: src/subscriptions.cpp src/ui/dialogs.cpp
+msgid "This is not a web address."
+msgstr "这不是网址。"
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be read."
+msgstr "无法读取日历。"
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be saved."
+msgstr "无法保存日历。"
+
+#: src/subscriptions.cpp
+msgid "This calendar is not a subscription."
+msgstr "此日历不是订阅日历。"
+
+#: src/ui/calendarwindow.cpp src/ui/eventdialog.cpp cutefish-calendar.desktop
+msgid "Calendar"
+msgstr "日历"
+
+#: src/ui/calendarwindow.cpp
+msgid "Save changes to this repeating event?"
+msgstr "要保存对此重复日程的更改吗？"
+
+#: src/ui/calendarwindow.cpp
+msgid "The new repeat applies to this and the following events."
+msgstr "新的重复规则将应用于此日程及之后的日程。"
+
+#: src/ui/calendarwindow.cpp
+msgid "Change only this event, or this and the events after it?"
+msgstr "仅更改此日程，还是更改此日程及之后的所有日程？"
+
+#: src/ui/calendarwindow.cpp
+msgid "Only This Event"
+msgstr "仅此日程"
+
+#: src/ui/calendarwindow.cpp
+msgid "All Events"
+msgstr "所有日程"
+
+#: src/ui/calendarwindow.cpp
+msgid "All Future Events"
+msgstr "所有未来的日程"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "“{title}” deleted"
+msgstr "已删除“{title}”"
+
+#: src/ui/calendarwindow.cpp
+msgid "Undo"
+msgstr "撤销"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Delete “{title}”?"
+msgstr "要删除“{title}”吗？"
+
+#: src/ui/calendarwindow.cpp
+msgid "This is a repeating event."
+msgstr "这是一个重复日程。"
+
+#: src/ui/calendarwindow.cpp
+msgid "Move this repeating event?"
+msgstr "要移动此重复日程吗？"
+
+#: src/ui/calendarwindow.cpp
+msgid "Move only this event, or this and the events after it?"
+msgstr "仅移动此日程，还是移动此日程及之后的所有日程？"
+
+#: src/ui/calendarwindow.cpp
+msgid "Show Details…"
+msgstr "显示详细信息…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit…"
+msgstr "编辑…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Delete"
+msgstr "删除"
+
+#: src/ui/calendarwindow.cpp
+msgid "New All-Day Event"
+msgstr "新建全天日程"
+
+#: src/ui/calendarwindow.cpp
+msgid "Refresh"
+msgstr "刷新"
+
+#: src/ui/calendarwindow.cpp
+msgid "Export…"
+msgstr "导出…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Unsubscribe…"
+msgstr "取消订阅…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Delete…"
+msgstr "删除…"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Subscribed to “{name}”"
+msgstr "已订阅“{name}”"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "“{name}” could not be refreshed. {error}"
+msgstr "无法刷新“{name}”。{error}"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Unsubscribe from “{name}”?"
+msgstr "要取消订阅“{name}”吗？"
+
+#: src/ui/calendarwindow.cpp
+msgid "Its events are removed from this computer."
+msgstr "它的日程将从这台电脑中移除。"
+
+#: src/ui/calendarwindow.cpp
+msgid "Unsubscribe"
+msgstr "取消订阅"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Delete “{name}”?"
+msgstr "要删除“{name}”吗？"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Its event is moved to the trash."
+msgid_plural "Its {n} events are moved to the trash."
+msgstr[0] "它的 {n} 个日程将被移到回收站。"
+
+#: src/ui/calendarwindow.cpp
+msgid "Export"
+msgstr "导出"
+
+#. TRANSLATORS: keep the ASCII parentheses and the pattern in them unchanged.
+#: src/ui/calendarwindow.cpp
+msgid "Calendar files (*.ics)"
+msgstr "日历文件 (*.ics)"
+
+#: src/ui/calendarwindow.cpp
+msgid "The calendar could not be exported."
+msgstr "无法导出日历。"
+
+#: src/ui/calendarwindow.cpp
+msgid "No events could be read from the file."
+msgstr "无法从文件中读取任何日程。"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "{n} event imported"
+msgid_plural "{n} events imported"
+msgstr[0] "已导入 {n} 个日程"
+
+#: src/ui/calendarwindow.cpp src/ui/dialogs.cpp
+msgid "Import"
+msgstr "导入"
+
+#. TRANSLATORS: keep the ASCII parentheses and the pattern in them unchanged.
+#: src/ui/calendarwindow.cpp
+msgid "All files (*)"
+msgstr "所有文件 (*)"
+
+#: src/ui/calendarwindow.cpp
+msgid "Keeps track of your events."
+msgstr "记录你的日程。"
+
+#: src/ui/calendarwindow.cpp
+msgid "About Calendar"
+msgstr "关于日历"
+
+#: src/ui/calendarwindow.cpp
+msgid "Settings…"
+msgstr "设置…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Hide Calendar"
+msgstr "隐藏日历"
+
+#: src/ui/calendarwindow.cpp
+msgid "Quit Calendar"
+msgstr "退出日历"
+
+#: src/ui/calendarwindow.cpp
+msgid "File"
+msgstr "文件"
+
+#: src/ui/calendarwindow.cpp
+msgid "New Calendar…"
+msgstr "新建日历…"
+
+#: src/ui/calendarwindow.cpp
+msgid "New Subscription…"
+msgstr "新建订阅…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Import…"
+msgstr "导入…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit"
+msgstr "编辑"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit Event…"
+msgstr "编辑日程…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Find"
+msgstr "查找"
+
+#: src/ui/calendarwindow.cpp
+msgid "View"
+msgstr "视图"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Day"
+msgstr "日"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Week"
+msgstr "周"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Month"
+msgstr "月"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Year"
+msgstr "年"
+
+#: src/ui/calendarwindow.cpp
+msgid "Hide Sidebar"
+msgstr "隐藏边栏"
+
+#: src/ui/calendarwindow.cpp
+msgid "Go to Today"
+msgstr "转到今天"
+
+#: src/ui/calendarwindow.cpp
+msgid "Previous"
+msgstr "上一个"
+
+#: src/ui/calendarwindow.cpp
+msgid "Next"
+msgstr "下一个"
+
+#: src/ui/calendarwindow.cpp
+msgid "Show Sidebar"
+msgstr "显示边栏"
+
+#: src/ui/calendarwindow.cpp
+msgid "Window"
+msgstr "窗口"
+
+#: src/ui/calendarwindow.cpp
+msgid "Minimize"
+msgstr "最小化"
+
+#: src/ui/calendarwindow.cpp
+msgid "Zoom"
+msgstr "缩放"
+
+#: src/ui/dialogs.cpp src/ui/eventdialog.cpp
+msgid "Cancel"
+msgstr "取消"
+
+#: src/ui/dialogs.cpp
+msgid "Edit Calendar"
+msgstr "编辑日历"
+
+#: src/ui/dialogs.cpp
+msgid "New Calendar"
+msgstr "新建日历"
+
+#: src/ui/dialogs.cpp
+msgid "Name"
+msgstr "名称"
+
+#: src/ui/dialogs.cpp src/ui/eventdialog.cpp
+msgid "Save"
+msgstr "保存"
+
+#: src/ui/dialogs.cpp
+msgid "Create"
+msgstr "创建"
+
+#: src/ui/dialogs.cpp
+msgid "Public Holidays"
+msgstr "公共节假日"
+
+#: src/ui/dialogs.cpp
+msgid "New Subscription"
+msgstr "新建订阅"
+
+#: src/ui/dialogs.cpp
+msgid "A calendar published on the web, such as public holidays. It is kept up to date and cannot be edited."
+msgstr "发布在网上的日历，例如公共节假日。它会保持更新，且无法编辑。"
+
+#: src/ui/dialogs.cpp
+msgid "webcal:// or https:// address"
+msgstr "webcal:// 或 https:// 地址"
+
+#: src/ui/dialogs.cpp
+msgid "Subscribe"
+msgstr "订阅"
+
+#: src/ui/dialogs.cpp
+msgid "Subscribing…"
+msgstr "正在订阅…"
+
+#: src/ui/dialogs.cpp
+msgid "Import Events"
+msgstr "导入日程"
+
+#: src/ui/dialogs.cpp
+#, python-brace-format
+msgid "{n} file"
+msgid_plural "{n} files"
+msgstr[0] "{n} 个文件"
+
+#: src/ui/dialogs.cpp
+msgid "Add to"
+msgstr "添加到"
+
+#: src/ui/dialogs.cpp
+msgid "Settings"
+msgstr "设置"
+
+#: src/ui/dialogs.cpp
+msgid "System Default"
+msgstr "系统默认"
+
+#: src/ui/dialogs.cpp
+msgid "Week Starts On"
+msgstr "每周开始于"
+
+#: src/ui/dialogs.cpp
+msgid "Show Week Numbers"
+msgstr "显示周数"
+
+#: src/ui/eventdialog.cpp
+msgid "Event"
+msgstr "日程"
+
+#: src/ui/eventdialog.cpp
+msgid "Edit Event"
+msgstr "编辑日程"
+
+#: src/ui/eventdialog.cpp
+msgid "Title"
+msgstr "标题"
+
+#: src/ui/eventdialog.cpp
+msgid "Location"
+msgstr "地点"
+
+#: src/ui/eventdialog.cpp
+msgid "All Day"
+msgstr "全天"
+
+#: src/ui/eventdialog.cpp
+msgid "Starts"
+msgstr "开始"
+
+#: src/ui/eventdialog.cpp
+msgid "Ends"
+msgstr "结束"
+
+#: src/ui/eventdialog.cpp
+msgid "The event ends before it starts."
+msgstr "日程的结束时间早于开始时间。"
+
+#: src/ui/eventdialog.cpp
+msgid "Never"
+msgstr "永不"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Day"
+msgstr "每天"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Weekday"
+msgstr "每个工作日"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Week"
+msgstr "每周"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Month"
+msgstr "每月"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Year"
+msgstr "每年"
+
+#: src/ui/eventdialog.cpp
+msgid "Custom"
+msgstr "自定义"
+
+#: src/ui/eventdialog.cpp
+msgid "Repeat"
+msgstr "重复"
+
+#: src/ui/eventdialog.cpp
+msgid "End Repeat"
+msgstr "结束重复"
+
+#: src/ui/eventdialog.cpp
+msgid "On Date"
+msgstr "于日期"
+
+#. TRANSLATORS: as in "After 3 times".
+#: src/ui/eventdialog.cpp
+msgid "After"
+msgstr "按次数"
+
+#: src/ui/eventdialog.cpp
+msgid "Alert"
+msgstr "提醒"
+
+#: src/ui/eventdialog.cpp
+msgid "Notes"
+msgstr "备注"
+
+#: src/ui/eventdialog.cpp
+msgid "Close"
+msgstr "关闭"
+
+#: src/ui/eventdialog.cpp
+msgid "Delete Event"
+msgstr "删除日程"
+
+#: src/ui/eventdialog.cpp
+msgid "Add"
+msgstr "添加"
+
+#: src/ui/eventdialog.cpp
+msgid "None"
+msgstr "无"
+
+#: src/ui/eventdialog.cpp
+msgid "On the Day (9:00)"
+msgstr "当天 (9:00)"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Day Before (9:00)"
+msgid_plural "{n} Days Before (9:00)"
+msgstr[0] "{n} 天前 (9:00)"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Week Before (9:00)"
+msgid_plural "{n} Weeks Before (9:00)"
+msgstr[0] "{n} 周前 (9:00)"
+
+#: src/ui/eventdialog.cpp
+msgid "At Time of Event"
+msgstr "日程开始时"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Minute Before"
+msgid_plural "{n} Minutes Before"
+msgstr[0] "{n} 分钟前"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Hour Before"
+msgid_plural "{n} Hours Before"
+msgstr[0] "{n} 小时前"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Day Before"
+msgid_plural "{n} Days Before"
+msgstr[0] "{n} 天前"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Week Before"
+msgid_plural "{n} Weeks Before"
+msgstr[0] "{n} 周前"
+
+#. TRANSLATORS: after "After" and a number field, as in "After 3 times".
+#: src/ui/eventdialog.cpp
+msgid "time"
+msgid_plural "times"
+msgstr[0] "次"
+
+#. TRANSLATORS: the events of a day that do not fit in it, as in "3 more".
+#: src/ui/eventviews.cpp
+#, python-brace-format
+msgid "{n} more"
+msgid_plural "{n} more"
+msgstr[0] "还有 {n} 项"
+
+#. TRANSLATORS: an event that began on an earlier day, such as "until 10:00".
+#: src/ui/eventviews.cpp
+#, python-brace-format
+msgid "until {time}"
+msgstr "至 {time}"
+
+#: src/ui/headerbar.cpp
+msgid "Search events"
+msgstr "搜索日程"
+
+#: src/ui/headerbar.cpp src/ui/searchresults.cpp
+msgid "Today"
+msgstr "今天"
+
+#: src/ui/searchresults.cpp
+msgid "All day"
+msgstr "全天"
+
+#: src/ui/searchresults.cpp
+msgid "Tomorrow"
+msgstr "明天"
+
+#: src/ui/searchresults.cpp
+msgid "No Events Found"
+msgstr "未找到日程"
+
+#: src/ui/sidebar.cpp
+msgid "Calendars"
+msgstr "日历"
+
+#: src/ui/sidebar.cpp
+msgid "Subscriptions"
+msgstr "订阅"
+
+#. TRANSLATORS: the label of the all-day row in the day and week views, in a narrow column beside it.
+#: src/ui/timegridview.cpp
+msgid "all-day"
+msgstr "全天"
+
+#: cutefish-calendar.desktop
+msgid "Keep track of events and appointments"
+msgstr "记录日程和约会"
+
+#: cutefish-calendar.desktop
+msgid "Events;Appointments;Schedule;Date;"
+msgstr "Events;Appointments;Schedule;Date;日程;约会;日历;日期;"
+
+#: cutefish-calendar-reminders.desktop
+msgid "Calendar Reminders"
+msgstr "日历提醒"

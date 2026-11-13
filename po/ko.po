@@ -1,0 +1,637 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cutefish-calendar\n"
+"Report-Msgid-Bugs-To: https://github.com/cutefishos\n"
+"POT-Creation-Date: 2026-10-31 15:53+0800\n"
+"PO-Revision-Date: 2026-10-31 15:53+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/calendarmodel.cpp
+msgid "Personal"
+msgstr "개인"
+
+#: src/calendarmodel.cpp
+msgid "Undo New Event"
+msgstr "새 이벤트 실행 취소"
+
+#: src/calendarmodel.cpp
+msgid "Undo Edit"
+msgstr "편집 실행 취소"
+
+#: src/calendarmodel.cpp
+msgid "Undo Delete"
+msgstr "삭제 실행 취소"
+
+#: src/calendarmodel.cpp
+msgid "Undo Move"
+msgstr "이동 실행 취소"
+
+#: src/reminderservice.cpp
+msgid "Today, all day"
+msgstr "오늘, 하루 종일"
+
+#: src/reminderservice.cpp
+msgid "Tomorrow, all day"
+msgstr "내일, 하루 종일"
+
+#. TRANSLATORS: a time range, such as "9:00 – 10:00".
+#: src/reminderservice.cpp src/ui/eventviews.cpp src/ui/timegridview.cpp
+#, python-brace-format
+msgid "{start} – {end}"
+msgstr "{start} – {end}"
+
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "Tomorrow, {time}"
+msgstr "내일, {time}"
+
+#. TRANSLATORS: a reminder's date and time, such as "Wednesday, 7 October, 9:00 – 10:00".
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "{date}, {time}"
+msgstr "{date}, {time}"
+
+#: src/reminderservice.cpp
+#, python-brace-format
+msgid "Snooze {n} Minute"
+msgid_plural "Snooze {n} Minutes"
+msgstr[0] "{n}분 후 다시 알림"
+
+#: src/reminderservice.cpp src/ui/calendarwindow.cpp src/ui/eventdialog.cpp
+#: src/ui/eventviews.cpp src/ui/searchresults.cpp
+msgid "New Event"
+msgstr "새 이벤트"
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be reached."
+msgstr "캘린더에 연결할 수 없습니다."
+
+#: src/subscriptions.cpp
+#, python-brace-format
+msgid "The server answered with error {status}."
+msgstr "서버가 오류를 반환했습니다(상태 {status})."
+
+#: src/subscriptions.cpp
+msgid "There is no calendar at this address."
+msgstr "이 주소에 캘린더가 없습니다."
+
+#: src/subscriptions.cpp src/ui/dialogs.cpp
+msgid "This is not a web address."
+msgstr "웹 주소가 아닙니다."
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be read."
+msgstr "캘린더를 읽을 수 없습니다."
+
+#: src/subscriptions.cpp
+msgid "The calendar could not be saved."
+msgstr "캘린더를 저장할 수 없습니다."
+
+#: src/subscriptions.cpp
+msgid "This calendar is not a subscription."
+msgstr "이 캘린더는 구독 캘린더가 아닙니다."
+
+#: src/ui/calendarwindow.cpp src/ui/eventdialog.cpp cutefish-calendar.desktop
+msgid "Calendar"
+msgstr "캘린더"
+
+#: src/ui/calendarwindow.cpp
+msgid "Save changes to this repeating event?"
+msgstr "이 반복 이벤트의 변경 사항을 저장하겠습니까?"
+
+#: src/ui/calendarwindow.cpp
+msgid "The new repeat applies to this and the following events."
+msgstr "새 반복 설정은 이 이벤트와 이후 이벤트에 적용됩니다."
+
+#: src/ui/calendarwindow.cpp
+msgid "Change only this event, or this and the events after it?"
+msgstr "이 이벤트만 변경하겠습니까, 아니면 이 이벤트와 이후 이벤트를 모두 변경하겠습니까?"
+
+#: src/ui/calendarwindow.cpp
+msgid "Only This Event"
+msgstr "이 이벤트만"
+
+#: src/ui/calendarwindow.cpp
+msgid "All Events"
+msgstr "모든 이벤트"
+
+#: src/ui/calendarwindow.cpp
+msgid "All Future Events"
+msgstr "이후 모든 이벤트"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "“{title}” deleted"
+msgstr "“{title}” 삭제됨"
+
+#: src/ui/calendarwindow.cpp
+msgid "Undo"
+msgstr "실행 취소"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Delete “{title}”?"
+msgstr "“{title}” 이벤트를 삭제하겠습니까?"
+
+#: src/ui/calendarwindow.cpp
+msgid "This is a repeating event."
+msgstr "반복 이벤트입니다."
+
+#: src/ui/calendarwindow.cpp
+msgid "Move this repeating event?"
+msgstr "이 반복 이벤트를 이동하겠습니까?"
+
+#: src/ui/calendarwindow.cpp
+msgid "Move only this event, or this and the events after it?"
+msgstr "이 이벤트만 이동하겠습니까, 아니면 이 이벤트와 이후 이벤트를 모두 이동하겠습니까?"
+
+#: src/ui/calendarwindow.cpp
+msgid "Show Details…"
+msgstr "세부사항 보기…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit…"
+msgstr "편집…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Delete"
+msgstr "삭제"
+
+#: src/ui/calendarwindow.cpp
+msgid "New All-Day Event"
+msgstr "새 종일 이벤트"
+
+#: src/ui/calendarwindow.cpp
+msgid "Refresh"
+msgstr "새로 고침"
+
+#: src/ui/calendarwindow.cpp
+msgid "Export…"
+msgstr "내보내기…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Unsubscribe…"
+msgstr "구독 취소…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Delete…"
+msgstr "삭제…"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Subscribed to “{name}”"
+msgstr "“{name}” 구독함"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "“{name}” could not be refreshed. {error}"
+msgstr "“{name}” 캘린더를 새로 고칠 수 없습니다. {error}"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Unsubscribe from “{name}”?"
+msgstr "“{name}” 구독을 취소하겠습니까?"
+
+#: src/ui/calendarwindow.cpp
+msgid "Its events are removed from this computer."
+msgstr "해당 이벤트가 이 컴퓨터에서 제거됩니다."
+
+#: src/ui/calendarwindow.cpp
+msgid "Unsubscribe"
+msgstr "구독 취소"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Delete “{name}”?"
+msgstr "“{name}” 캘린더를 삭제하겠습니까?"
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "Its event is moved to the trash."
+msgid_plural "Its {n} events are moved to the trash."
+msgstr[0] "이벤트 {n}개가 휴지통으로 이동됩니다."
+
+#: src/ui/calendarwindow.cpp
+msgid "Export"
+msgstr "내보내기"
+
+#. TRANSLATORS: keep the ASCII parentheses and the pattern in them unchanged.
+#: src/ui/calendarwindow.cpp
+msgid "Calendar files (*.ics)"
+msgstr "캘린더 파일 (*.ics)"
+
+#: src/ui/calendarwindow.cpp
+msgid "The calendar could not be exported."
+msgstr "캘린더를 내보낼 수 없습니다."
+
+#: src/ui/calendarwindow.cpp
+msgid "No events could be read from the file."
+msgstr "파일에서 이벤트를 읽을 수 없습니다."
+
+#: src/ui/calendarwindow.cpp
+#, python-brace-format
+msgid "{n} event imported"
+msgid_plural "{n} events imported"
+msgstr[0] "이벤트 {n}개를 가져옴"
+
+#: src/ui/calendarwindow.cpp src/ui/dialogs.cpp
+msgid "Import"
+msgstr "가져오기"
+
+#. TRANSLATORS: keep the ASCII parentheses and the pattern in them unchanged.
+#: src/ui/calendarwindow.cpp
+msgid "All files (*)"
+msgstr "모든 파일 (*)"
+
+#: src/ui/calendarwindow.cpp
+msgid "Keeps track of your events."
+msgstr "이벤트를 관리합니다."
+
+#: src/ui/calendarwindow.cpp
+msgid "About Calendar"
+msgstr "캘린더 정보"
+
+#: src/ui/calendarwindow.cpp
+msgid "Settings…"
+msgstr "설정…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Hide Calendar"
+msgstr "캘린더 숨기기"
+
+#: src/ui/calendarwindow.cpp
+msgid "Quit Calendar"
+msgstr "캘린더 종료"
+
+#: src/ui/calendarwindow.cpp
+msgid "File"
+msgstr "파일"
+
+#: src/ui/calendarwindow.cpp
+msgid "New Calendar…"
+msgstr "새 캘린더…"
+
+#: src/ui/calendarwindow.cpp
+msgid "New Subscription…"
+msgstr "새 구독…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Import…"
+msgstr "가져오기…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit"
+msgstr "편집"
+
+#: src/ui/calendarwindow.cpp
+msgid "Edit Event…"
+msgstr "이벤트 편집…"
+
+#: src/ui/calendarwindow.cpp
+msgid "Find"
+msgstr "찾기"
+
+#: src/ui/calendarwindow.cpp
+msgid "View"
+msgstr "보기"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Day"
+msgstr "일"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Week"
+msgstr "주"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Month"
+msgstr "월"
+
+#: src/ui/calendarwindow.cpp src/ui/headerbar.cpp
+msgid "Year"
+msgstr "년"
+
+#: src/ui/calendarwindow.cpp
+msgid "Hide Sidebar"
+msgstr "사이드바 가리기"
+
+#: src/ui/calendarwindow.cpp
+msgid "Go to Today"
+msgstr "오늘로 이동"
+
+#: src/ui/calendarwindow.cpp
+msgid "Previous"
+msgstr "이전"
+
+#: src/ui/calendarwindow.cpp
+msgid "Next"
+msgstr "다음"
+
+#: src/ui/calendarwindow.cpp
+msgid "Show Sidebar"
+msgstr "사이드바 보기"
+
+#: src/ui/calendarwindow.cpp
+msgid "Window"
+msgstr "창"
+
+#: src/ui/calendarwindow.cpp
+msgid "Minimize"
+msgstr "최소화"
+
+#: src/ui/calendarwindow.cpp
+msgid "Zoom"
+msgstr "확대/축소"
+
+#: src/ui/dialogs.cpp src/ui/eventdialog.cpp
+msgid "Cancel"
+msgstr "취소"
+
+#: src/ui/dialogs.cpp
+msgid "Edit Calendar"
+msgstr "캘린더 편집"
+
+#: src/ui/dialogs.cpp
+msgid "New Calendar"
+msgstr "새 캘린더"
+
+#: src/ui/dialogs.cpp
+msgid "Name"
+msgstr "이름"
+
+#: src/ui/dialogs.cpp src/ui/eventdialog.cpp
+msgid "Save"
+msgstr "저장"
+
+#: src/ui/dialogs.cpp
+msgid "Create"
+msgstr "생성"
+
+#: src/ui/dialogs.cpp
+msgid "Public Holidays"
+msgstr "공휴일"
+
+#: src/ui/dialogs.cpp
+msgid "New Subscription"
+msgstr "새 구독"
+
+#: src/ui/dialogs.cpp
+msgid "A calendar published on the web, such as public holidays. It is kept up to date and cannot be edited."
+msgstr "공휴일처럼 웹에 게시된 캘린더입니다. 항상 최신 상태로 유지되며 편집할 수 없습니다."
+
+#: src/ui/dialogs.cpp
+msgid "webcal:// or https:// address"
+msgstr "webcal:// 또는 https:// 주소"
+
+#: src/ui/dialogs.cpp
+msgid "Subscribe"
+msgstr "구독"
+
+#: src/ui/dialogs.cpp
+msgid "Subscribing…"
+msgstr "구독하는 중…"
+
+#: src/ui/dialogs.cpp
+msgid "Import Events"
+msgstr "이벤트 가져오기"
+
+#: src/ui/dialogs.cpp
+#, python-brace-format
+msgid "{n} file"
+msgid_plural "{n} files"
+msgstr[0] "파일 {n}개"
+
+#: src/ui/dialogs.cpp
+msgid "Add to"
+msgstr "추가할 캘린더"
+
+#: src/ui/dialogs.cpp
+msgid "Settings"
+msgstr "설정"
+
+#: src/ui/dialogs.cpp
+msgid "System Default"
+msgstr "시스템 기본값"
+
+#: src/ui/dialogs.cpp
+msgid "Week Starts On"
+msgstr "주 시작 요일"
+
+#: src/ui/dialogs.cpp
+msgid "Show Week Numbers"
+msgstr "주 번호 보기"
+
+#: src/ui/eventdialog.cpp
+msgid "Event"
+msgstr "이벤트"
+
+#: src/ui/eventdialog.cpp
+msgid "Edit Event"
+msgstr "이벤트 편집"
+
+#: src/ui/eventdialog.cpp
+msgid "Title"
+msgstr "제목"
+
+#: src/ui/eventdialog.cpp
+msgid "Location"
+msgstr "위치"
+
+#: src/ui/eventdialog.cpp
+msgid "All Day"
+msgstr "하루 종일"
+
+#: src/ui/eventdialog.cpp
+msgid "Starts"
+msgstr "시작"
+
+#: src/ui/eventdialog.cpp
+msgid "Ends"
+msgstr "종료"
+
+#: src/ui/eventdialog.cpp
+msgid "The event ends before it starts."
+msgstr "이벤트 종료 시간이 시작 시간보다 앞섭니다."
+
+#: src/ui/eventdialog.cpp
+msgid "Never"
+msgstr "안 함"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Day"
+msgstr "매일"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Weekday"
+msgstr "매 평일"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Week"
+msgstr "매주"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Month"
+msgstr "매월"
+
+#: src/ui/eventdialog.cpp
+msgid "Every Year"
+msgstr "매년"
+
+#: src/ui/eventdialog.cpp
+msgid "Custom"
+msgstr "사용자 지정"
+
+#: src/ui/eventdialog.cpp
+msgid "Repeat"
+msgstr "반복"
+
+#: src/ui/eventdialog.cpp
+msgid "End Repeat"
+msgstr "반복 종료"
+
+#: src/ui/eventdialog.cpp
+msgid "On Date"
+msgstr "특정 날짜"
+
+#. TRANSLATORS: as in "After 3 times".
+#: src/ui/eventdialog.cpp
+msgid "After"
+msgstr "횟수 지정"
+
+#: src/ui/eventdialog.cpp
+msgid "Alert"
+msgstr "알림"
+
+#: src/ui/eventdialog.cpp
+msgid "Notes"
+msgstr "메모"
+
+#: src/ui/eventdialog.cpp
+msgid "Close"
+msgstr "닫기"
+
+#: src/ui/eventdialog.cpp
+msgid "Delete Event"
+msgstr "이벤트 삭제"
+
+#: src/ui/eventdialog.cpp
+msgid "Add"
+msgstr "추가"
+
+#: src/ui/eventdialog.cpp
+msgid "None"
+msgstr "없음"
+
+#: src/ui/eventdialog.cpp
+msgid "On the Day (9:00)"
+msgstr "당일(9:00)"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Day Before (9:00)"
+msgid_plural "{n} Days Before (9:00)"
+msgstr[0] "{n}일 전(9:00)"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Week Before (9:00)"
+msgid_plural "{n} Weeks Before (9:00)"
+msgstr[0] "{n}주 전(9:00)"
+
+#: src/ui/eventdialog.cpp
+msgid "At Time of Event"
+msgstr "이벤트 시간"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Minute Before"
+msgid_plural "{n} Minutes Before"
+msgstr[0] "{n}분 전"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Hour Before"
+msgid_plural "{n} Hours Before"
+msgstr[0] "{n}시간 전"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Day Before"
+msgid_plural "{n} Days Before"
+msgstr[0] "{n}일 전"
+
+#: src/ui/eventdialog.cpp
+#, python-brace-format
+msgid "{n} Week Before"
+msgid_plural "{n} Weeks Before"
+msgstr[0] "{n}주 전"
+
+#. TRANSLATORS: after "After" and a number field, as in "After 3 times".
+#: src/ui/eventdialog.cpp
+msgid "time"
+msgid_plural "times"
+msgstr[0] "회 후"
+
+#. TRANSLATORS: the events of a day that do not fit in it, as in "3 more".
+#: src/ui/eventviews.cpp
+#, python-brace-format
+msgid "{n} more"
+msgid_plural "{n} more"
+msgstr[0] "{n}개 더"
+
+#. TRANSLATORS: an event that began on an earlier day, such as "until 10:00".
+#: src/ui/eventviews.cpp
+#, python-brace-format
+msgid "until {time}"
+msgstr "{time}까지"
+
+#: src/ui/headerbar.cpp
+msgid "Search events"
+msgstr "이벤트 검색"
+
+#: src/ui/headerbar.cpp src/ui/searchresults.cpp
+msgid "Today"
+msgstr "오늘"
+
+#: src/ui/searchresults.cpp
+msgid "All day"
+msgstr "하루 종일"
+
+#: src/ui/searchresults.cpp
+msgid "Tomorrow"
+msgstr "내일"
+
+#: src/ui/searchresults.cpp
+msgid "No Events Found"
+msgstr "이벤트를 찾을 수 없음"
+
+#: src/ui/sidebar.cpp
+msgid "Calendars"
+msgstr "캘린더"
+
+#: src/ui/sidebar.cpp
+msgid "Subscriptions"
+msgstr "구독"
+
+#. TRANSLATORS: the label of the all-day row in the day and week views, in a narrow column beside it.
+#: src/ui/timegridview.cpp
+msgid "all-day"
+msgstr "종일"
+
+#: cutefish-calendar.desktop
+msgid "Keep track of events and appointments"
+msgstr "이벤트와 약속을 관리합니다"
+
+#: cutefish-calendar.desktop
+msgid "Events;Appointments;Schedule;Date;"
+msgstr "이벤트;약속;일정;날짜;Events;Appointments;Schedule;Date;"
+
+#: cutefish-calendar-reminders.desktop
+msgid "Calendar Reminders"
+msgstr "캘린더 알림"
