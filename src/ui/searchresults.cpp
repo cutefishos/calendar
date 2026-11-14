@@ -159,6 +159,7 @@ SearchResults::SearchResults(CalendarWindow* window)
     , m_empty(addChild<Label>(tr("No Events Found")))
 {
     setName("searchResults");
+    m_scroll->setBottomCornerRadius(Theme::current().windowRadius);
     m_list = m_scroll->setContent<Column>();
     m_list->setMargins({0, 6, 0, 6});
 

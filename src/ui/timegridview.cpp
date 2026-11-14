@@ -363,6 +363,7 @@ TimeGridView::TimeGridView(CalendarWindow* window, int days)
     m_strip = addChild<Strip>(this);
     m_scroll = addChild<ScrollView>();
     m_scroll->setName("hourGrid");
+    m_scroll->setBottomCornerRadius(Theme::current().windowRadius);
     m_canvas = m_scroll->setContent<Canvas>(this);
 
     m_nowTimer.setInterval(std::chrono::seconds(30));
