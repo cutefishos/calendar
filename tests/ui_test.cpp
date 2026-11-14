@@ -609,7 +609,7 @@ TEST_F(UiTest, EscapeClosesTheDatePickerBeforeTheEditor)
     EXPECT_FALSE(window.editor());
 }
 
-TEST_F(UiTest, WindowShowsItsMenusInTheStatusBar)
+TEST_F(UiTest, WindowShowsItsMenusInTheMenuBar)
 {
     CalendarWindow& window = open();
     Menu* menu = window.window()->mainMenu();

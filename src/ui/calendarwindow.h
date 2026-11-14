@@ -148,7 +148,7 @@ private:
     void confirmDeleteCalendar(const CalendarItem& calendar);
     void exportCalendar(const CalendarItem& calendar);
     void installShortcuts();
-    // The menus the status bar shows while the window is active.
+    // The menus the menu bar shows while the window is active.
     void buildMainMenu();
     void updateSidebarState(bool animate);
     // The views, which show text.
